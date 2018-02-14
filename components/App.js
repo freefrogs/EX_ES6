@@ -31,23 +31,27 @@ App = React.createClass({
 	c) ustaw nowy stan dla wyszukiwanego tekstu.*/
 
 	getGif: function(searchingText, callback) { //1.
-		var GIPHY_API_URL = 'http:/'+'/api.giphy.com';
-		var GIPHY_PUB_KEY = 'dc6zaTOxFJmzC';
+		return new Promise(
+			function (resolve) {
+				var GIPHY_API_URL = 'http:/'+'/api.giphy.com';
+				var GIPHY_PUB_KEY = 'dc6zaTOxFJmzC';
 
-		var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText; //2.
-		var xhr = new XMLHttpRequest(); //3.
-		xhr.open('GET', url);
-		xhr.onload = function() {
-			if (xhr.status === 200) {
-				var data = JSON.parse(xhr.responseText).data; //4.
-				var gif = { //5.
-					url:data.fixed_width_downsampled_url,
-					soureUrl: data.url
+				var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText; //2.
+				var xhr = new XMLHttpRequest(); //3.
+				xhr.open('GET', url);
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						var data = JSON.parse(xhr.responseText).data; //4.
+						var gif = { //5.
+							url:data.fixed_width_downsampled_url,
+							soureUrl: data.url
+						};
+						resolve(gif); //6.
+					}
 				};
-				callback(gif); //6.
+				xhr.send();
 			}
-		};
-		xhr.send();
+		).then(callback);
 	},
 
 /*

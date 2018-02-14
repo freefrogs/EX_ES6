@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "http-server",
-    "start": "babel script.js --watch --out-file script-compiled.js"
+    "start": "http-server",
+    "start2": "babel script.js --watch --out-file script-compiled.js"
   },
   "keywords": [],
   "author": "",
