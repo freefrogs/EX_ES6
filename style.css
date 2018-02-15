@@ -1,0 +1,58 @@
+body {
+	font-family: Calibri, sans-serif;
+	background: #27586B;
+}
+
+.controls, .stopwatch, .results, .clear {
+	width: 60%;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+	background: #293F47;
+	border-left: 2px solid #1C2123;
+	border-right: 2px solid #1C2123;
+}
+
+.controls {
+	margin-top: 40px;
+	border-top: 2px solid #1C2123;
+	border-radius: 50px 50px 0 0;
+	padding: 40px 20px;
+}
+
+.stopwatch {
+	font-size: 55px;
+	letter-spacing: 5px;
+	color: #D0DFE5;
+}
+
+.results{
+	list-style: none;
+	font-size: 30px;
+	color: #058CC0;
+}
+
+.results li {
+	display: inline-block;
+	padding: 10px 10%;
+}
+
+.clear {
+	border-bottom: 2px solid #1C2123;
+	border-radius: 0 0 50px 50px;
+	padding-bottom: 40px;
+}
+
+.button {
+	text-decoration: none;
+	color: #D0DFE5;
+	font-size: 25px;
+	background: #1C2123;
+	padding: 10px 20px;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+.button:hover {
+	background: #565552;
+}
